@@ -1,0 +1,14 @@
+digraph DecisionTree {
+  graph [rankdir=TB];
+  node [shape=box, style="rounded,filled", fontname="Arial", fillcolor="#eaf3ff"];
+  edge [fontname="Arial"];
+  n0 [label="Outlook == 'Overcast'\nsamples: 14\nentropy: 0.940\ngain: 0.226"];
+  n1 [label="Predict: Yes\nsamples: 4\nentropy: 0.000", fillcolor="#d7f5df"];
+  n2 [label="Humidity == 'High'\nsamples: 10\nentropy: 1.000\ngain: 0.278"];
+  n3 [label="Predict: No\nsamples: 5\nentropy: 0.722", fillcolor="#d7f5df"];
+  n4 [label="Predict: Yes\nsamples: 5\nentropy: 0.722", fillcolor="#d7f5df"];
+  n2 -> n3 [label="Yes"];
+  n2 -> n4 [label="No"];
+  n0 -> n1 [label="Yes"];
+  n0 -> n2 [label="No"];
+}

@@ -1,0 +1,30 @@
+digraph DecisionTree {
+  graph [rankdir=TB];
+  node [shape=box, style="rounded,filled", fontname="Arial", fillcolor="#eaf3ff"];
+  edge [fontname="Arial"];
+  n0 [label="Outlook == 'Overcast'\nsamples: 14\nentropy: 0.940\ngain: 0.226"];
+  n1 [label="Predict: Yes\nsamples: 4\nentropy: 0.000", fillcolor="#d7f5df"];
+  n2 [label="Humidity == 'High'\nsamples: 10\nentropy: 1.000\ngain: 0.278"];
+  n3 [label="Outlook == 'Rain'\nsamples: 5\nentropy: 0.722\ngain: 0.322"];
+  n4 [label="Wind == 'Strong'\nsamples: 2\nentropy: 1.000\ngain: 1.000"];
+  n5 [label="Predict: No\nsamples: 1\nentropy: 0.000", fillcolor="#d7f5df"];
+  n6 [label="Predict: Yes\nsamples: 1\nentropy: 0.000", fillcolor="#d7f5df"];
+  n4 -> n5 [label="Yes"];
+  n4 -> n6 [label="No"];
+  n7 [label="Predict: No\nsamples: 3\nentropy: 0.000", fillcolor="#d7f5df"];
+  n3 -> n4 [label="Yes"];
+  n3 -> n7 [label="No"];
+  n8 [label="Wind == 'Strong'\nsamples: 5\nentropy: 0.722\ngain: 0.322"];
+  n9 [label="Outlook == 'Rain'\nsamples: 2\nentropy: 1.000\ngain: 1.000"];
+  n10 [label="Predict: No\nsamples: 1\nentropy: 0.000", fillcolor="#d7f5df"];
+  n11 [label="Predict: Yes\nsamples: 1\nentropy: 0.000", fillcolor="#d7f5df"];
+  n9 -> n10 [label="Yes"];
+  n9 -> n11 [label="No"];
+  n12 [label="Predict: Yes\nsamples: 3\nentropy: 0.000", fillcolor="#d7f5df"];
+  n8 -> n9 [label="Yes"];
+  n8 -> n12 [label="No"];
+  n2 -> n3 [label="Yes"];
+  n2 -> n8 [label="No"];
+  n0 -> n1 [label="Yes"];
+  n0 -> n2 [label="No"];
+}
